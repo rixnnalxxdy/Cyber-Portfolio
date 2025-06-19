@@ -17,14 +17,14 @@
 
 Link: https://www.youtube.com/watch?v=7_LPdttKXPc
 
+---
+
 ### OSI Model
 The OSI (Open Systems Interconnection) Model defines how data is transferred through a network. It consists of 7 layers, each responsible for a specific aspect of communication. Each layer uses a package of protocols.
 The 7 Layers of the OSI Model (Top to Bottom):
 Application Layer
 
 The **OSI (Open Systems Interconnection)** Model defines how data is transferred through a network. It consists of **7 layers**, each responsible for a specific aspect of communication. Each layer uses a package of protocols.
-
----
 
 #### The 7 Layers of the OSI Model (Top to Bottom):
 
@@ -68,13 +68,14 @@ The **OSI (Open Systems Interconnection)** Model defines how data is transferred
 - Handles hardware connections (e.g., cables, switches, signal voltage).
 - Defines transmission media and bit transmission methods.
 
----
 
 > 💡 **Mnemonic to remember the OSI layers (top-down):**  
 **All People Seem To Need Data Processing**  
 (Application, Presentation, Session, Transport, Network, Data Link, Physical)
 
 Link: https://www.youtube.com/watch?v=vv4y_uOneC0
+
+---
 
 ### Ports & Protocols Basics
 To do..

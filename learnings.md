@@ -14,6 +14,7 @@
 - Server unwraps packet layers to retrieve original message  
 - Routers act as traffic directors for packets  
 - Clients get temporary IPs assigned by ISP
+
 Link: https://www.youtube.com/watch?v=7_LPdttKXPc
 
 ### OSI Model

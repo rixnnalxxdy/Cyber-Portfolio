@@ -51,7 +51,7 @@ The **OSI (Open Systems Interconnection)** Model defines how data is transferred
 - **Error Control**: Uses **ARQ (Automatic Repeat Request)** and checksums.
 - **Protocols**: `TCP` (reliable, connection-based), `UDP` (fast, connectionless – e.g., streaming).
 
-###### 5. Network Layer
+##### 5. Network Layer
 - Handles **logical addressing**, **routing**, and **path determination**.
 - Assigns sender and receiver **IP addresses**.
 - **Routing Protocols**: `OSPF`, `BGP`, `IS-IS`.

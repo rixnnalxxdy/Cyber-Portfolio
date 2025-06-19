@@ -43,7 +43,7 @@ The **OSI (Open Systems Interconnection)** Model defines how data is transferred
 - Handles **authentication** before a session starts.
 - Tracks session activity (e.g., which packets belong to which file).
 - **Protocols/APIs**: `NetBIOS`, `APIs` (Application Programming Interfaces).
-- 
+
 ##### 4. Transport Layer
 - Ensures **reliable data transfer** via segmentation, flow control, and error control.
 - **Segmentation**: Splits data into segments with port and sequence numbers.
@@ -72,6 +72,7 @@ The **OSI (Open Systems Interconnection)** Model defines how data is transferred
 > 💡 **Mnemonic to remember the OSI layers (top-down):**  
 **All People Seem To Need Data Processing**  
 (Application, Presentation, Session, Transport, Network, Data Link, Physical)
+
 Link: https://www.youtube.com/watch?v=vv4y_uOneC0
 
 ### Ports & Protocols Basics

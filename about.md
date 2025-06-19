@@ -1,3 +1,1 @@
-[Home](index.md) | [Projects](projects.md) | [Blog](blog.md)
 
-About me...

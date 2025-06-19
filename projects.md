@@ -1,6 +1,6 @@
 [Home](index.md) | [Learnings](learnings.md)
 
-# Project 1 19/06/25
+# Project #1 19/06/25
 ## Home Network Mapping Project
 
 **Goal:** Understand how my home devices connect to each other and to the internet, and learn to identify network components using basic commands.

@@ -1,4 +1,4 @@
-[Projects](projects.md) | [Blog](blog.md)
+[Projects](projects.md) | [Learnings](blog.md)
 
 
 Hey! I'm Rianna - I’m just curious about the cyber world and decided to dive in and learn it.

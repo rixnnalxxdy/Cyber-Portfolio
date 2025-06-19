@@ -1,4 +1,4 @@
-[Home](index.md) | [Blog](blog.md)
+[Home](index.md) | [Learnings](blog.md)
 
 # Project 1 19/06/25
 ## Home Network Mapping Project

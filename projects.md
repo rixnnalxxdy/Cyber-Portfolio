@@ -1,13 +1,13 @@
 [Home](index.md) | [About](about.md) | [Blog](blog.md)
 
-Project 1 19/06/25
-# Home Network Mapping Project
+#Project 1 19/06/25
+## Home Network Mapping Project
 
 **Goal:** Understand how my home devices connect to each other and to the internet, and learn to identify network components using basic commands.
 
 ---
 
-## What I Learned
+### What I Learned
 
 - The difference between IPv4, subnet mask, and default gateway
 - Dynamic vs static IP addresses
@@ -17,7 +17,7 @@ Project 1 19/06/25
 
 ---
 
-## Tools & Commands Used
+### Tools & Commands Used
 
 | Command       | Purpose                                  |
 |---------------|-------------------------------------------|
@@ -27,7 +27,7 @@ Project 1 19/06/25
 
 ---
 
-## Summary of What I Did
+### Summary of What I Did
 
 1. **Identified My Network Adapter:**  
    Used `ipconfig` to find the active adapter (Wireless LAN adapter Wi-Fi) and note the IPv4 and default gateway addresses.  

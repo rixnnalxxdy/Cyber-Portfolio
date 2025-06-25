@@ -1,7 +1,14 @@
 [Home](index.md) | [Projects](projects.md) |
 
 # Cybersecurity learnings
-## DAY 2 25/06/25 - Started Google's Cybersecurity Certification
+
+## DAY 3 25/06/25 - Manage Security Risks - Google Course
+
+
+
+---
+
+## DAY 2 24/06/25 - Foundations of Cybersecurity - Google Course
 https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=google&utm_medium=paidsearch&utm_campaign=ha-sem-bk-cs-exa-mid__geo%E2%80%94AU&utm_term=google%20cyber%20security%20certification&utm_content=RSA1&gwg_campaign_id=22282035594&gad_source=1&gad_campaignid=22282035594&gbraid=0AAAAApjPcOJM3Co18Strlt1tJm4d3un93&gclid=CjwKCAjwmenCBhA4EiwAtVjzmkMLWYodkW0CQBJ2ChK6SZgBmwAYeVMAhq0yoBkHw6_tOf9b-cO6_BoCozEQAvD_BwE&gclsrc=aw.ds
 ### Foundations of Cybersecurity – Key Learnings  
 #### Security Domains Overview
@@ -39,7 +46,7 @@ https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=go
 - Secure coding practices and code reviews
 - Integrate security throughout the development lifecycle (DevSecOps)
 
-#### 🧱 Security Frameworks and Principles
+#### Security Frameworks and Principles
 
 - Identify and analyze critical assets
 - Implement structured guidelines to mitigate risk
@@ -82,7 +89,9 @@ https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=go
   - **Order of volatility** (what to collect first)
   - Chain of custody
   - Evidence handling procedures
+
 ---
+
 ## DAY 1 19/06/25
 ### How the Internet Works – Beginner Notes
 - Internet = network of wires and routers connecting devices worldwide  

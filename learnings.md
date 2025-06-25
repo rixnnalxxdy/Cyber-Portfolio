@@ -1,7 +1,88 @@
 [Home](index.md) | [Projects](projects.md) |
 
 # Cybersecurity learnings
+## DAY 2 25/06/25 - Started Google's Cybersecurity Certification
+https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=google&utm_medium=paidsearch&utm_campaign=ha-sem-bk-cs-exa-mid__geo%E2%80%94AU&utm_term=google%20cyber%20security%20certification&utm_content=RSA1&gwg_campaign_id=22282035594&gad_source=1&gad_campaignid=22282035594&gbraid=0AAAAApjPcOJM3Co18Strlt1tJm4d3un93&gclid=CjwKCAjwmenCBhA4EiwAtVjzmkMLWYodkW0CQBJ2ChK6SZgBmwAYeVMAhq0yoBkHw6_tOf9b-cO6_BoCozEQAvD_BwE&gclsrc=aw.ds
+### Foundations of Cybersecurity – Key Learnings  
+#### Security Domains Overview
 
+##### 1. Security and Risk Management
+- Update and enforce company security policies
+- Align practices with legal, regulatory, and business requirements
+
+##### 2. Asset Security
+- Classify and handle data appropriately
+- Ensure proper disposal and destruction of hardware and sensitive materials
+
+##### 3. Security Architecture and Engineering
+- Design and implement secure systems
+- Configure firewalls and security infrastructure
+
+##### 4. Communication and Network Security
+- Use secure network protocols (e.g., VPNs)
+- Protect data in transit and ensure secure communication channels
+
+##### 5. Identity and Access Management (IAM)
+- Control who has access to what
+- Validate user roles, permissions, and use of access devices (e.g., key cards)
+- Secure authentication and authorization
+
+##### 6. Security Assessment and Testing
+- Conduct audits, risk assessments, and penetration testing
+- Identify vulnerabilities before attackers do
+
+##### 7. Security Operations
+- Monitor and investigate security events
+- Respond to incidents and perform forensics
+
+##### 8. Software Development Security
+- Secure coding practices and code reviews
+- Integrate security throughout the development lifecycle (DevSecOps)
+
+#### 🧱 Security Frameworks and Principles
+
+- Identify and analyze critical assets
+- Implement structured guidelines to mitigate risk
+- Manage the **Security Lifecycle**
+- Protect:
+  - **PII** (Personally Identifiable Information)
+  - Financial and sensitive business data
+- Comply with data laws (e.g., **GDPR**)
+- Define and document security goals
+- Apply **Security Controls** and enforce strong security processes
+- Communicate risks and results effectively
+
+#### Core Concepts:
+- **CIA Triad**:
+  - **Confidentiality**
+  - **Integrity**
+  - **Availability**
+- **NIST Cybersecurity Framework (CSF)**:
+  - Provides a baseline to manage both short- and long-term cybersecurity risks
+
+#### Ethics in Cybersecurity
+
+- Practice ethical behavior when handling data and systems
+- Preserve evidence correctly with chain of custody protocols
+- Follow legal standards and industry guidelines
+
+#### Tools and Techniques
+
+##### SIEM Tools (Security Information and Event Management)
+- Collect and analyze real-time security data
+- Generate alerts for anomalies
+- Examples: **Elastic**, **Splunk**, **Google Chronicle**
+
+##### Packet Sniffers
+- Tools like `tcpdump` and **Wireshark** used to analyze network traffic
+
+##### Incident Response Playbooks
+- Define step-by-step actions for handling incidents
+- Include:
+  - **Order of volatility** (what to collect first)
+  - Chain of custody
+  - Evidence handling procedures
+---
 ## DAY 1 19/06/25
 ### How the Internet Works – Beginner Notes
 - Internet = network of wires and routers connecting devices worldwide  
@@ -76,7 +157,3 @@ The **OSI (Open Systems Interconnection)** Model defines how data is transferred
 Link: https://www.youtube.com/watch?v=vv4y_uOneC0
 
 ---
-
-### Ports & Protocols Basics
-To do..
-Link:https://www.youtube.com/watch?v=yLuaVkxvmk4

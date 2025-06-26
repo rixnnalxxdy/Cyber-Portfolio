@@ -2,9 +2,100 @@
 
 # Cybersecurity learnings
 
-## DAY 3 25/06/25 - Manage Security Risks - Google Course
+## DAY 4 27/06/25 – SIEM 
 
 
+
+## DAY 3 25/06/25 - Risk Management, Audits, and Threats - Google Course
+
+### Security Posture & Risk Management
+- A strong **security posture** includes:
+  - Clear security goals and objectives
+  - Risk mitigation processes
+  - Compliance with laws (e.g., GDPR, APRA CPS 234)
+  - Business continuity plans
+  - Ethical and legal security practices
+
+- **Risk Management Steps (NIST RMF)**:
+  1. **Prepare** – Understand org context, assets, and resources
+  2. **Categorize** – Identify asset criticality and impact levels
+  3. **Select** – Choose appropriate controls (e.g., from NIST 800-53)
+  4. **Implement** – Deploy security controls across systems
+  5. **Assess** – Evaluate control effectiveness
+  6. **Authorize** – Approve system operations based on risk
+  7. **Monitor** – Continuously track security and risks
+
+- Common **organizational risks**:
+  - Misconfigurations
+  - Unpatched software
+  - Shadow IT
+  - Weak access controls
+
+### Audits & Vulnerability Management
+
+- **Security Audit** = structured evaluation of controls, policies, and procedures.
+  - Can be internal or external
+  - Checks compliance against standards (e.g., ISO 27001, NIST, SOC 2)
+  - Assesses whether controls are sufficient to protect critical assets
+
+- **Internal Audit Steps**:
+  1. Define scope and goals
+  2. Risk assessment of critical assets
+  3. Evaluate control implementation
+  4. Identify gaps and compliance issues
+  5. Report findings and improvement plans
+
+### Real-World Vulnerabilities (Examples)
+| Vulnerability | Impact |
+|---------------|--------|
+| **ProxyLogon** | Exploits Microsoft Exchange (pre-auth RCE) |
+| **ZeroLogon** | Bypass Netlogon authentication (domain takeover) |
+| **Log4Shell** | RCE in Log4j logging framework |
+| **PetitPotam** | Forces NTLM authentication to hijack sessions |
+| **SSRF** | Tricks server to access unintended backend services |
+| **Security Logging Failures** | Enables undetected attacks due to poor log monitoring |
+
+### OWASP Security Principles (Expanded)
+These support secure design and development:
+- **Minimize attack surface**
+- **Principle of least privilege**
+- **Defense in depth**
+- **Fail securely** – systems fail in a way that maintains security
+- **Fix issues correctly** – apply root cause fixes, not patches
+- **Keep security simple** – avoid overly complex controls
+- **Separation of duties** – no one person has total control
+- **Avoid security through obscurity**
+- **Don’t trust external services by default**
+
+### Threats, Risks & Impacts
+
+| Term | Definition |
+|------|------------|
+| **Threat** | A potential cause of harm (e.g., hacker, malware) |
+| **Vulnerability** | Weakness that can be exploited (e.g., unpatched system) |
+| **Risk** | Probability + impact of a threat exploiting a vulnerability |
+
+**Examples of threats:**
+- **Ransomware** – Locks data and systems, demands payment
+- **Phishing** – Deceives users to gain sensitive info
+- **Insider threats** – Malicious or negligent employees
+
+**Impacts of security incidents:**
+- Financial losses (e.g., ransomware payouts, breach costs)
+- Reputational damage
+- Identity theft
+- Legal or regulatory fines
+
+### Web Layers Overview
+- **Surface Web**: Indexed, public (Google, Wikipedia)
+- **Deep Web**: Hidden behind logins (bank portals, intranets)
+- **Dark Web**: Encrypted networks (accessed via Tor), anonymous traffic
+
+
+### Reflections / What I Learned
+- Understanding **audit frameworks** and **risk frameworks** helps align cybersecurity with business.
+- Real-world vulnerabilities (e.g., Log4Shell) show why regular patching and monitoring is vital.
+- Strong **foundational principles (OWASP)** are essential even in modern cloud-based environments.
 
 ---
 

@@ -46,6 +46,7 @@
   5. Report findings and improvement plans
 
 ### Real-World Vulnerabilities (Examples)
+
 | Vulnerability | Impact |
 |---------------|--------|
 | **ProxyLogon** | Exploits Microsoft Exchange (pre-auth RCE) |

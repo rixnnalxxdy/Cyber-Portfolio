@@ -43,7 +43,7 @@
   - **PaaS** – Platform as a Service
   - **SaaS** – Software as a Service
 
-![Cloud Models](images/cloud-models.png)
+![Cloud Models](Images/cloud-models.png)
 
 
 ### Data Packets

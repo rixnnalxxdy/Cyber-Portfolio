@@ -4,6 +4,104 @@
 
 ## DAY 4 27/06/25 – SIEM 
 
+### SIEM Tools & SOAR
+
+- **SIEM (Security Information and Event Management)** tools log and analyze data from:
+  - Firewall logs
+  - Network logs
+  - Server logs
+- **Uses**: Create dashboards, monitor metrics (e.g., response time, failure rate)
+- **SOAR (Security Orchestration, Automation and Response)**: Automates response using playbooks and workflows
+- **Deployment Types**:
+  - Self-hosted, cloud-hosted, hybrid
+  - Tools: Splunk, Chronicle, Elastic
+  - Open-source examples: Suricata, Linux tools
+- **Playbooks**: Step-by-step manuals for incident response
+  - **6 Phases**:
+    1. Preparation  
+    2. Detection and Analysis  
+    3. Containment  
+    4. Eradication and Recovery  
+    5. Post-Incident Activity  
+    6. Coordination  
+
+
+### Networks
+
+- A network is a group of connected devices communicating via MAC and IP addresses
+- **LAN** – Local Area Network (small area)  
+- **WAN** – Wide Area Network (large area)
+- **Devices**:
+  - **Hub** – Broadcasts to all devices
+  - **Switch** – Sends to intended devices only
+  - **Router** – Connects multiple networks
+  - **Modem** – Connects network to the internet
+- **Firewall** – Controls incoming/outgoing traffic
+- **Simulation Tools**: Cisco Packet Tracer
+- **Cloud Computing Models** (CSP):
+  - **IaaS** – Infrastructure as a Service
+  - **PaaS** – Platform as a Service
+  - **SaaS** – Software as a Service
+
+![Cloud Models](cloud-models.png)
+
+
+### Data Packets
+
+- **Packet Structure**:
+  - **Header** – IP, MAC, Protocol
+  - **Body** – Message content
+  - **Footer** – Signals end of packet
+- **Bandwidth** – Amount of data received per second
+- **Packet Sniffing** – Inspecting packets in transit
+
+
+### TCP/IP Model
+
+- **Purpose**: Organizes and transmits data across networks
+- **4 Layers**:
+  1. Application – HTTP, DNS, TLS  
+  2. Transport – TCP, UDP  
+  3. Internet – IP routing  
+  4. Network Access – Hardware & data link
+- **Common Ports**:
+  - 25 – Email  
+  - 443 – Secure web traffic  
+  - 20 – Large file transfers
+
+
+### OSI Model (7 Layers)
+
+1. Application  
+2. Presentation  
+3. Session  
+4. Transport  
+5. Network  
+6. Data Link  
+7. Physical  
+
+
+### IP Addressing & IPv4 Packet Header
+
+- **IPv4 vs IPv6** – Can be public or private
+- **Private IPs** – Used only within the same internal network
+
+#### 13 Fields in IPv4 Header
+
+1. **Version (VER)** – IP version used (e.g., IPv4)
+2. **Header Length (IHL)** – Length of the header
+3. **Type of Service (ToS)** – Quality of service indicator
+4. **Total Length** – Length of header + data
+5. **Identification** – Unique ID for packet reassembly
+6. **Flags** – Fragmentation status
+7. **Fragment Offset** – Position of this fragment
+8. **Time to Live (TTL)** – Packet expiry to avoid endless looping
+9. **Protocol** – Indicates transport protocol (TCP/UDP)
+10. **Header Checksum** – Error detection
+11. **Source IP Address** – Sender’s IP
+12. **Destination IP Address** – Receiver’s IP
+13. **Options** – Optional settings if header is extended
+
 ---
 
 ## DAY 3 25/06/25 - Risk Management, Audits, and Threats - Google Course

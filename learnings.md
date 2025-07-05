@@ -2,6 +2,134 @@
 
 # Cybersecurity learnings
 
+## DAY 8 05/07/25 : Cloud Hardening
+
+### Key Concepts
+
+- **Use of Server Baseline Image**  
+  - A standard, pre-configured image used as a secure starting point for cloud servers.
+
+- **Identity and Access Management (IAM)**  
+  - Controls who can access cloud resources and what actions they can perform.
+
+- **Configuration Management**  
+  - Ensuring cloud resources are securely configured and compliant with policies.
+
+- **Zero-Day Attack**  
+  - Exploitation of unknown vulnerabilities before patches are available.
+
+- **Shared Responsibility Model**  
+  - Cloud provider and customer share security duties. Providers secure the infrastructure, customers secure data and configurations.
+
+- **Hypervisors**  
+  - **Type 1:** Runs directly on host hardware (bare-metal).  
+  - **Type 2:** Runs on a host operating system (e.g., VirtualBox).
+
+- **Baselining**  
+  - Fixed reference point used to compare changes made to cloud environments.
+
+- **Cryptography in Cloud**  
+  - Uses encryption and secure key management systems to protect data.
+
+- **Cryptographic Erasure**  
+  - Method of erasing data by deleting or destroying the encryption keys.
+
+- **Key Management**  
+  - Examples:  
+    - **Trusted Platform Module (TPM):** Hardware chip that securely stores passwords, certificates, and keys.  
+    - **Cloud Hardware Security Module (HSM):** Device for securely storing cryptographic keys and processing cryptographic operations.
+
+---
+
+### Activity Scenario
+
+You are a cybersecurity analyst working for a multimedia company that offers web design services, graphic design, and social media marketing solutions to small businesses. Your organization recently experienced a DDoS attack, which compromised the internal network for two hours until it was resolved.
+
+During the attack, your organization’s network services suddenly stopped responding due to an incoming flood of ICMP packets. Normal internal network traffic could not access any network resources. The incident management team responded by:
+
+- Blocking incoming ICMP packets.
+- Stopping all non-critical network services offline.
+- Restoring critical network services.
+
+The company’s cybersecurity team investigated the event and found that a malicious actor had sent a flood of ICMP pings through an unconfigured firewall. This vulnerability allowed a distributed denial of service (DDoS) attack to overwhelm the network.
+
+To address the security event, the network security team implemented:
+
+- A new firewall rule to limit the rate of incoming ICMP packets.
+- Source IP address verification on the firewall to check for spoofed IP addresses on incoming ICMP packets.
+- Network monitoring software to detect abnormal traffic patterns.
+- An IDS/IPS system to filter out suspicious ICMP traffic.
+
+
+---
+
+## DAY 7 03/07/25: Security Hardening
+
+### Overview
+- Process of strengthening a system to reduce vulnerability and attack surface.
+- Includes software updates/patches, security configuration changes (e.g., updating encryption standards), removing unused ports, apps, and networks.
+- Conduct regular penetration testing.
+
+### OS Hardening
+- OS acts as intermediary between software and devices.
+- Key practices: updates, backups, authorized lists of users and devices.
+- Patch updates should be added to baseline configuration.
+- Proper disposal of hardware and software.
+- Implement strong password policies and Multi-Factor Authentication (MFA).
+
+### Brute Force Attacks
+- **Simple brute force:** Guessing passwords.
+- **Dictionary attacks:** Use lists of commonly used passwords.
+- Tedious and time-consuming for attackers.
+
+### Virtual Machines (VMs)
+- Useful for investigating potentially infected machines or malware in a constrained environment.
+- Risk: Malicious programs can escape virtualization to infect the host machine.
+
+### Sandbox Environments
+- Allow testing isolated from your main network.
+- Can be costly.
+
+### Prevention Methods for Password Hacks
+- **Salting and Hashing:** Hashing converts info into a unique value (one-way encryption), salting adds random characters to hashed passwords.
+- Use MFA.
+- CAPTCHA and reCAPTCHA verify human users, not bots.
+- Enforce strong password policies.
+
+### Network Hardening
+- Port filtering.
+- Network access privilege management.
+
+### Regular Maintenance Tasks
+- Firewall rules maintenance.
+- Network log analysis.
+- Patch updates.
+- Server backups.
+
+### Less Frequent Tasks
+- Port filtering reviews.
+- Updating wireless protocols.
+- Network segmentation.
+- Following latest encryption standards.
+
+### Intrusion Detection and Prevention
+- **Intrusion Detection Systems (IDS):** Check for signatures of known attacks and anomalies indicating malicious activity.
+- **Intrusion Prevention Systems (IPS):** Actively stop anomalies.
+
+---
+
+### Devices / Tools Comparison
+
+| Device/Tool                  | Advantages                                                                                      | Disadvantages                                                                                   |
+|-----------------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| **Firewall**                | Allows or blocks traffic based on set rules.                                                  | Can only filter packets based on header information.                                           |
+| **Intrusion Detection System (IDS)** | Detects and alerts admins about possible intrusions and malicious traffic.                   | Can only detect known or obvious attacks; does not stop traffic.                               |
+| **Intrusion Prevention System (IPS)** | Monitors activity and actively stops intrusions.                                           | Inline device; failure can disrupt network; risk of false positives blocking legit traffic.    |
+| **Security Information and Event Management (SIEM)** | Collects and analyzes log data from multiple machines, aggregates security events in dashboards. | Only reports possible issues; does not actively prevent or stop threats.                       |
+
+
+---
+
 ## DAY 6 01/07/25: Network Intrusion Attacks
 
 ### Denial of Service (DoS) Attack

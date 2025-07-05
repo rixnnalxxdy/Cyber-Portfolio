@@ -2,6 +2,100 @@
 
 # Cybersecurity learnings
 
+## DAY 5 30/06/25 - Firewalls, VPNs, Proxy Servers
+
+### Network Protocols
+
+- **TCP Communication**  
+  - TCP isn’t limited to just two devices. It establishes a direct connection between two endpoints, but the underlying network infrastructure can route data packets across multiple devices.  
+  - TCP verifies both devices through a handshake.  
+
+- **ARP (Address Resolution Protocol)**  
+  - Used to map IP addresses to MAC addresses on a local network.  
+
+- **HTTPS**  
+  - Provides a secure network communication channel.  
+
+- **DNS (Domain Name System)**  
+  - Translates domain names into IP addresses.  
+
+- **Other protocols:**  
+  - **TTPS:** Uses SSL/TLS to encrypt data (likely meant HTTPS).  
+  - **SNMP:** Simple Network Management Protocol.  
+  - **ICMP:** Internet Control Message Protocol.  
+  - **SFTP:** Secure File Transfer Protocol.  
+  - **Telnet:** Remote login protocol (insecure).  
+  - **SSH (Secure Shell):** Secure remote login.  
+  - **Post Office Protocols:** Email retrieval protocols (e.g., POP3).  
+
+
+### Firewalls
+
+- A network security device that monitors traffic to and from your network.  
+- Can allow or block traffic using **port filtering**, which controls communication by port numbers.  
+
+- **Types of firewalls:**  
+  - **Hardware firewalls:** Inspect each data packet at the network edge.  
+  - **Software firewalls:** Inspect traffic received by a specific computer. Network-wide software firewalls check all network traffic but add a software burden.  
+  - **Cloud-based firewalls:** Configurable via the cloud with custom rules.  
+
+- **Firewall operation modes:**  
+  - **Stateful:** Analyzes traffic trends and maintains context of active connections.  
+  - **Stateless:** Operates based on predefined rules without keeping track of state.  
+
+- **Next Generation Firewall (NGFW):**  
+  - Performs deep packet inspection, intrusion detection, and uses threat intelligence.  
+
+
+### VPNs (Virtual Private Networks)
+
+- Changes your IP address and hides your virtual location.  
+- Keeps data private when using public networks.  
+- Uses **encapsulation** — wraps sensitive data inside other data packets.  
+- Encrypts all internet traffic and transmits it through encrypted tunnels requiring keys to decrypt.  
+- Helps protect privacy by encrypting all internet traffic.  
+
+
+### Security Zones and Network Segmentation
+
+- A **security zone** is a segment of a network designed to protect internal networks using **network segmentation**.  
+- Acts as a barrier within internal networks, e.g., guest WiFi vs staff WiFi at a hotel.  
+- Types of zones:  
+  - **Uncontrolled zone:** Outside the organization’s control.  
+  - **Controlled zone:** Internal networks under security policies.  
+  - **DMZ (Demilitarized Zone):** Contains public-facing services (web servers, proxy servers, DNS servers) accessible from the internet but isolated from the internal network.  
+
+
+### Subnetting
+
+- The subdivision of a network into logical smaller subgroups.  
+- Uses **CIDR (Classless Inter-Domain Routing)** notation for subnetting.  
+- CIDR format: IPv4 address followed by a slash and a number (IP network prefix), e.g., `192.168.1.0/24`.  
+
+
+### Proxy Servers
+
+- A dedicated server acting as an intermediary between the internet and an internal network.  
+- Functions:  
+  - Blocks unsafe websites.  
+  - Caches external data temporarily to reduce contact with internal services.  
+
+- Types of proxies:  
+  - **Forward proxy:** Regulates and restricts a user's access to the internet.  
+  - **Reverse proxy:** Regulates and restricts external access to internal servers.  
+  - **Email proxy server:** Filters spam emails.  
+
+
+### VPN Types: Remote Access and Site-to-Site
+
+- **WireGuard VPN:**  
+  - A high-speed, open-source VPN protocol with advanced encryption.  
+- **IPSec VPN:**  
+  - A legacy VPN protocol, more complex than WireGuard but widely used.  
+
+
+---
+
 ## DAY 4 27/06/25 – SIEM 
 
 ### SIEM Tools & SOAR

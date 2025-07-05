@@ -2,7 +2,54 @@
 
 # Cybersecurity learnings
 
-## DAY 5 30/06/25 - Firewalls, VPNs, Proxy Servers
+## DAY 6 01/07/25: Network Intrusion Attacks
+
+### Denial of Service (DoS) Attack
+- Overloads an organization’s network causing it to crash.
+- **Distributed Denial of Service (DDoS):** Uses multiple devices to overwhelm the network.
+
+### Network Level DoS Attacks
+- **SYN Flood Attack:** Simulates TCP connections by flooding the server with SYN packets.
+- **ICMP Flood Attack:** Uses Internet Control Message Protocol packets to overwhelm a target.
+- **Ping of Death:** Sends massive, malformed packets to crash the target system.
+
+### Network Protocol Analyzer / Packet Sniffer Tools
+- SolarWinds NetFlow Traffic Analyzer  
+- ManageEngine OpManager  
+- Azure Network Watcher  
+- Wireshark  
+- Tcpdump  
+
+### Packet Capture Includes:
+- Timestamps  
+- Source IP  
+- Source Port  
+- Destination IP  
+- Destination Port  
+> Hackers can use packet sniffers to access valuable data.
+
+### Packet Sniffing Types
+- **Passive Packet Sniffing:** Reading data packets as they transit the network without altering them.  
+- **Active Packet Sniffing:** Manipulating packets while in transit to capture or alter data.
+
+### Prevention Measures
+- Use VPNs to encrypt data traffic.  
+- Use HTTPS on websites to encrypt data in transit.  
+- Avoid using unsecured Wi-Fi networks, as anyone on the network can potentially access your data.
+
+### Common Network Attacks
+- **IP Spoofing:** Hacker changes the source IP address of packets to impersonate trusted devices.  
+- **On-Path Attack (Man-in-the-Middle):** Malicious actor intercepts and potentially alters communication between two authorized parties.  
+- **Replay Attack:** Attacker intercepts data packets and retransmits them later to gain unauthorized access or disrupt communication.  
+- **Smurf Attack:** Combination of DDoS and IP spoofing; floods a target IP address by amplifying ICMP requests.
+
+### Protection Against These Attacks
+- Use encryption protocols to secure data transmission.  
+- Configure firewalls to validate IP addresses and block suspicious traffic.  
+
+---
+
+## DAY 5 30/06/25: Firewalls, VPNs, Proxy Servers
 
 ### Network Protocols
 
@@ -96,7 +143,7 @@
 
 ---
 
-## DAY 4 27/06/25 – SIEM 
+## DAY 4 27/06/25: SIEM 
 
 ### SIEM Tools & SOAR
 
@@ -292,7 +339,7 @@ These support secure design and development:
 
 ---
 
-## DAY 2 24/06/25 - Foundations of Cybersecurity - Google Course
+## DAY 2 24/06/25: Foundations of Cybersecurity - Google Course
 https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=google&utm_medium=paidsearch&utm_campaign=ha-sem-bk-cs-exa-mid__geo%E2%80%94AU&utm_term=google%20cyber%20security%20certification&utm_content=RSA1&gwg_campaign_id=22282035594&gad_source=1&gad_campaignid=22282035594&gbraid=0AAAAApjPcOJM3Co18Strlt1tJm4d3un93&gclid=CjwKCAjwmenCBhA4EiwAtVjzmkMLWYodkW0CQBJ2ChK6SZgBmwAYeVMAhq0yoBkHw6_tOf9b-cO6_BoCozEQAvD_BwE&gclsrc=aw.ds
 ### Foundations of Cybersecurity – Key Learnings  
 #### Security Domains Overview
@@ -376,7 +423,7 @@ https://grow.google/certificates/en_au/certificates/cybersecurity/?utm_source=go
 
 ---
 
-## DAY 1 19/06/25
+## DAY 1 19/06/25: Internet Basics
 ### How the Internet Works – Beginner Notes
 - Internet = network of wires and routers connecting devices worldwide  
 - Servers have public IP addresses  

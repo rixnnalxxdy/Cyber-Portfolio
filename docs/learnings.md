@@ -1,4 +1,4 @@
-[Home](docs/index.md) | [Projects](docs/projects.md) |
+[Home](index.md) | [Projects](projects.md) |
 
 # Cybersecurity learnings
 

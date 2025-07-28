@@ -141,7 +141,7 @@ Be as if you are the ai bot in coursera.`
   }
 
   try {
-    const res = await fetch("https://eorl4uarw983g5y.m.pipedream.net", {
+    const res = await fetch("https://eogt0xdpatyui5c.m.pipedream.net", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

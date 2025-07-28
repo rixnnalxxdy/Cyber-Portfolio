@@ -1,4 +1,4 @@
-[Home](index.md) | [Learnings](learnings.md)
+[Home](frontend/index.md) | [Learnings](frontend/learnings.md)
 
 # Activity 7 05/07/25: DDoS Attack Incident Analysis & NIST CSF Security Plan
 

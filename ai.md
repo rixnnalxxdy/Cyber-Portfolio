@@ -83,7 +83,7 @@ title: AI Learning Assistant
   }
 </style>
 
-<h2 style="text-align:center;">🧠 AI Learning Assistant</h2>
+<h2 style="text-align:center;">AI Learning Assistant</h2>
 <p style="text-align:center;">Type a topic you'd like to be tested on. The AI will quiz you and give feedback as you go!</p>
 
 <div id="chat-container">
@@ -126,37 +126,42 @@ Be as if you are the ai bot in coursera.`
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 
-  async function sendMessage() {
-    const text = userInput.value.trim();
-    if (!text) return;
+ async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
 
-    addMessage(text, "user");
-    userInput.value = "";
+  addMessage(text, "user");
+  userInput.value = "";
 
-    if (!started) {
-      conversation.push({ role: "user", content: text });
-      started = true;
-    } else {
-      conversation.push({ role: "user", content: text });
-    }
-
-    try {
-      const res = await fetch("https://eorl4uarw983g5y.m.pipedream.net", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "gpt-4o",
-          messages: conversation
-        })
-      });
-
-      const data = await res.json();
-      const aiReply = data.response || "Sorry, I didn't get that.";
-
-      conversation.push({ role: "assistant", content: aiReply });
-      addMessage(aiReply, "ai");
-    } catch (error) {
-      addMessage("⚠️ Error connecting to AI service.", "ai");
-    }
+  if (!started) {
+    conversation.push({ role: "user", content: text });
+    started = true;
+  } else {
+    conversation.push({ role: "user", content: text });
   }
+
+  try {
+    const res = await fetch("https://eorl4uarw983g5y.m.pipedream.net", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        // CHANGE THIS LINE:
+        model: "gemini-pro", // <--- NOW USING GEMINI
+        messages: conversation
+      })
+    });
+
+    const data = await res.json();
+    const aiReply = data.response || "Sorry, I didn't get that.";
+
+    conversation.push({ role: "assistant", content: aiReply });
+    addMessage(aiReply, "ai");
+  } catch (error) {
+    // This catch block on the client side will only catch network errors,
+    // not HTTP errors like 400.
+    // We still need the server-side Pipedream logs to see the actual 400 error message.
+    addMessage("⚠️ Error connecting to AI service. Check console for details.", "ai");
+    console.error("Fetch error from GitHub Pages:", error);
+  }
+}
 </script>

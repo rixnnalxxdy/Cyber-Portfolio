@@ -5,19 +5,19 @@
   <title>Cyber AI Study Helper</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
+    body, html {
+      margin: 0; padding: 0; height: 100%;
       font-family: 'Share Tech Mono', monospace;
       background: #0f0f0f;
       color: #0fefef;
       display: flex;
       overflow: hidden;
+      height: 100vh;
     }
     .container {
       display: flex;
       width: 100%;
-      height: 100vh;
+      height: 100%;
     }
     .ai-panel, .user-panel {
       flex: 1;
@@ -26,6 +26,7 @@
       display: flex;
       flex-direction: column;
       border: 1px solid #0fefef;
+      overflow: hidden;
     }
     .ai-panel {
       background: #121212;
@@ -35,7 +36,7 @@
     .user-panel {
       background: #181818;
       border-left: none;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
     h1 {
       margin-top: 0;
@@ -59,6 +60,7 @@
     .chat-message {
       margin-bottom: 15px;
       line-height: 1.4;
+      white-space: pre-wrap;
     }
     .chat-message.ai {
       color: #0ff;
@@ -67,7 +69,7 @@
       color: #f0f0f0;
       text-align: right;
     }
-    select, textarea, button {
+    textarea, button {
       background: #111;
       border: 1px solid #0ff;
       color: #0ff;
@@ -78,6 +80,7 @@
       width: 100%;
       box-sizing: border-box;
       margin-bottom: 10px;
+      resize: none;
     }
     button {
       cursor: pointer;
@@ -99,22 +102,21 @@
 
     <section class="user-panel">
       <h1>Your Input</h1>
-      <select id="modeSelect" aria-label="Select mode">
-        <option value="ask">Ask a Question</option>
-        <option value="review">Review Notes</option>
-        <option value="test">Take a Test</option>
-      </select>
-      <textarea id="inputText" rows="5" placeholder="Type your question here..."></textarea>
-      <button onclick="submitRequest()">Submit</button>
+      <textarea id="inputText" rows="5" placeholder="Type your answer or topic here..."></textarea>
+      <button id="submitBtn">Submit</button>
     </section>
   </div>
 
   <script>
     const aiChat = document.getElementById('aiChat');
     const inputText = document.getElementById('inputText');
-    const modeSelect = document.getElementById('modeSelect');
+    const submitBtn = document.getElementById('submitBtn');
 
-    // Add messages to chat box
+    // Conversation state to track quiz flow
+    let conversationId = null; // (optional if you want to track)
+    let quizStarted = false;
+    let awaitingTopic = true;
+
     function addMessage(content, sender) {
       const div = document.createElement('div');
       div.classList.add('chat-message', sender);
@@ -123,32 +125,64 @@
       aiChat.scrollTop = aiChat.scrollHeight;
     }
 
-    async function submitRequest() {
-      const mode = modeSelect.value;
-      const question = inputText.value.trim();
+    // Start by prompting the user for the topic
+    addMessage('Hello! What cybersecurity topic would you like to be tested on today?', 'ai');
 
-      if (mode === 'ask' && question === '') {
-        alert('Please enter a question.');
-        return;
+    async function submitRequest() {
+      const userInput = inputText.value.trim();
+      if (!userInput) return alert('Please enter a response.');
+
+      addMessage(`You: ${userInput}`, 'user');
+      inputText.value = '';
+      inputText.disabled = true;
+      submitBtn.disabled = true;
+
+      let payload = {};
+      if (awaitingTopic) {
+        // First user input: topic selection
+        payload = { mode: 'startQuiz', topic: userInput };
+        awaitingTopic = false;
+        quizStarted = true;
+      } else {
+        // Then user is answering quiz questions
+        payload = { mode: 'answer', answer: userInput };
       }
 
-      addMessage(`You: ${question || `[${mode} mode]`}`, 'user');
-      inputText.value = '';
-
-      // Call backend
       try {
         const res = await fetch('/ai-helper', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ mode, question })
+          body: JSON.stringify(payload)
         });
-
         const data = await res.json();
+
         addMessage(`AI: ${data.reply}`, 'ai');
+
+        if (data.quizFinished) {
+          // Quiz finished: disable input or reset flow
+          addMessage('Quiz complete! You can refresh the page to start a new session.', 'ai');
+          inputText.disabled = true;
+          submitBtn.disabled = true;
+        } else {
+          // Allow next user input
+          inputText.disabled = false;
+          submitBtn.disabled = false;
+          inputText.focus();
+        }
       } catch (err) {
         addMessage('AI: Sorry, something went wrong.', 'ai');
+        inputText.disabled = false;
+        submitBtn.disabled = false;
       }
     }
+
+    submitBtn.addEventListener('click', submitRequest);
+    inputText.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        submitRequest();
+      }
+    });
   </script>
 </body>
 </html>

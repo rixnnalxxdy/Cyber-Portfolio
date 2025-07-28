@@ -5,14 +5,17 @@
   <title>Cyber AI Study Helper</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
-    body, html {
+    html, body {
       margin: 0; padding: 0; height: 100%;
       font-family: 'Share Tech Mono', monospace;
       background: #0f0f0f;
       color: #0fefef;
-      display: flex;
       overflow: hidden;
+    }
+    body {
+      display: flex;
       height: 100vh;
+      width: 100vw;
     }
     .container {
       display: flex;
@@ -21,53 +24,64 @@
     }
     .ai-panel, .user-panel {
       flex: 1;
-      padding: 20px;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       border: 1px solid #0fefef;
-      overflow: hidden;
+      box-sizing: border-box;
+      background: #121212;
+      color: #0ff;
     }
     .ai-panel {
-      background: #121212;
       border-right: none;
-      overflow-y: auto;
     }
     .user-panel {
-      background: #181818;
       border-left: none;
-      justify-content: flex-start;
+      background: #181818;
+      color: #0ff;
     }
-    h1 {
-      margin-top: 0;
+    /* AI panel split: title + chat */
+    .ai-panel > h1 {
+      margin: 10px 0;
+      padding: 0 20px;
       font-weight: normal;
       text-align: center;
       letter-spacing: 2px;
       font-size: 1.8rem;
-      color: #0ff;
       text-shadow: 0 0 5px #0ff;
+      flex-shrink: 0;
     }
     .chat-box {
       flex-grow: 1;
-      overflow-y: auto;
-      margin-bottom: 20px;
+      margin: 10px 20px 20px 20px;
       border: 1px solid #0ff;
-      padding: 15px;
       background: #050505;
       border-radius: 8px;
       box-shadow: 0 0 15px #0ff88;
-    }
-    .chat-message {
-      margin-bottom: 15px;
-      line-height: 1.4;
+      overflow-y: auto;
+      padding: 15px;
       white-space: pre-wrap;
     }
     .chat-message.ai {
       color: #0ff;
+      margin-bottom: 15px;
+      line-height: 1.4;
     }
     .chat-message.user {
       color: #f0f0f0;
       text-align: right;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    /* User panel styles */
+    .user-panel > h1 {
+      margin: 10px 0;
+      padding: 0 20px;
+      font-weight: normal;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      text-shadow: 0 0 5px #0ff;
+      flex-shrink: 0;
     }
     textarea, button {
       background: #111;
@@ -77,14 +91,14 @@
       font-size: 1rem;
       padding: 10px;
       border-radius: 4px;
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 10px;
+      width: calc(100% - 40px);
+      margin: 0 20px 10px 20px;
       resize: none;
     }
     button {
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin: 0 20px 20px 20px;
     }
     button:hover {
       background: #0ff;
@@ -106,7 +120,6 @@
       <button id="submitBtn">Submit</button>
     </section>
   </div>
-
   <script>
     const aiChat = document.getElementById('aiChat');
     const inputText = document.getElementById('inputText');

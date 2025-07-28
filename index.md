@@ -1,4 +1,4 @@
-[Projects](projects.md) | [Learnings](learnings.md)
+[Projects](projects.md) | [Learnings](learnings.md) | [AI](ai.md)
 
 
 Hey! I'm Rianna - I’m just curious about the cyber world and decided to dive in and learn it.

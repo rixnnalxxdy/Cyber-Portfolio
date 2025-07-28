@@ -1,167 +1,154 @@
----
-layout: default
-title: AI Learning Assistant
----
-
-<style>
-  /* Chat container */
-  #chat-container {
-    max-width: 600px;
-    margin: 1rem auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    background: #f9f9f9;
-  }
-
-  /* Scrollable chat box */
-  #chat-box {
-    flex: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  /* Message bubbles */
-  .message {
-    max-width: 70%;
-    margin-bottom: 0.75rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    line-height: 1.3;
-    word-wrap: break-word;
-  }
-
-  /* User messages (right aligned) */
-  .message.user {
-    background-color: #0078d7;
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
-  }
-
-  /* AI messages (left aligned) */
-  .message.ai {
-    background-color: #e1e1e1;
-    color: #333;
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
-  }
-
-  /* Input area */
-  #input-area {
-    display: flex;
-    border-top: 1px solid #ccc;
-    padding: 0.5rem;
-    background: white;
-  }
-
-  #user-input {
-    flex: 1;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-  }
-
-  #send-btn {
-    margin-left: 0.5rem;
-    background-color: #0078d7;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 0 1rem;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
-  #send-btn:hover {
-    background-color: #005ea2;
-  }
-</style>
-
-<h2 style="text-align:center;">AI Learning Assistant</h2>
-<p style="text-align:center;">Type a topic you'd like to be tested on. The AI will quiz you and give feedback as you go!</p>
-
-<div id="chat-container">
-  <div id="chat-box"></div>
-
-  <div id="input-area">
-    <input type="text" id="user-input" placeholder="Type your answer or topic..." autocomplete="off" />
-    <button id="send-btn">Send</button>
-  </div>
-</div>
-
-<script>
-  const chatBox = document.getElementById("chat-box");
-  const userInput = document.getElementById("user-input");
-  const sendBtn = document.getElementById("send-btn");
-
-  const conversation = [
-    {
-      role: "system",
-      content: `You are a friendly quiz master. 
-When the user gives you a topic, ask a deep quiz question about that topic. 
-After each user answer, give feedback (correct or not), explain briefly, then ask the next question. 
-Be as if you are the ai bot in coursera.`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber AI Study Helper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Share Tech Mono', monospace;
+      background: #0f0f0f;
+      color: #0fefef;
+      display: flex;
+      overflow: hidden;
     }
-  ];
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+    .ai-panel, .user-panel {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #0fefef;
+    }
+    .ai-panel {
+      background: #121212;
+      border-right: none;
+      overflow-y: auto;
+    }
+    .user-panel {
+      background: #181818;
+      border-left: none;
+      justify-content: space-between;
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: normal;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+    .chat-box {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border: 1px solid #0ff;
+      padding: 15px;
+      background: #050505;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #0ff88;
+    }
+    .chat-message {
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .chat-message.ai {
+      color: #0ff;
+    }
+    .chat-message.user {
+      color: #f0f0f0;
+      text-align: right;
+    }
+    select, textarea, button {
+      background: #111;
+      border: 1px solid #0ff;
+      color: #0ff;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    button {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #0ff;
+      color: #111;
+      border-color: #0cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="ai-panel">
+      <h1>AI Assistant</h1>
+      <div id="aiChat" class="chat-box"></div>
+    </section>
 
-  let started = false;
+    <section class="user-panel">
+      <h1>Your Input</h1>
+      <select id="modeSelect" aria-label="Select mode">
+        <option value="ask">Ask a Question</option>
+        <option value="review">Review Notes</option>
+        <option value="test">Take a Test</option>
+      </select>
+      <textarea id="inputText" rows="5" placeholder="Type your question here..."></textarea>
+      <button onclick="submitRequest()">Submit</button>
+    </section>
+  </div>
 
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") sendMessage();
-  });
+  <script>
+    const aiChat = document.getElementById('aiChat');
+    const inputText = document.getElementById('inputText');
+    const modeSelect = document.getElementById('modeSelect');
 
-  function addMessage(text, sender) {
-    const msgDiv = document.createElement("div");
-    msgDiv.classList.add("message");
-    msgDiv.classList.add(sender === "user" ? "user" : "ai");
-    msgDiv.textContent = text;
-    chatBox.appendChild(msgDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
+    // Add messages to chat box
+    function addMessage(content, sender) {
+      const div = document.createElement('div');
+      div.classList.add('chat-message', sender);
+      div.textContent = content;
+      aiChat.appendChild(div);
+      aiChat.scrollTop = aiChat.scrollHeight;
+    }
 
- async function sendMessage() {
-  const text = userInput.value.trim();
-  if (!text) return;
+    async function submitRequest() {
+      const mode = modeSelect.value;
+      const question = inputText.value.trim();
 
-  addMessage(text, "user");
-  userInput.value = "";
+      if (mode === 'ask' && question === '') {
+        alert('Please enter a question.');
+        return;
+      }
 
-  if (!started) {
-    conversation.push({ role: "user", content: text });
-    started = true;
-  } else {
-    conversation.push({ role: "user", content: text });
-  }
+      addMessage(`You: ${question || `[${mode} mode]`}`, 'user');
+      inputText.value = '';
 
-  try {
-    const res = await fetch("https://eogt0xdpatyui5c.m.pipedream.net", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        // CHANGE THIS LINE:
-        model: "gemini-pro", // <--- NOW USING GEMINI
-        messages: conversation
-      })
-    });
+      // Call backend
+      try {
+        const res = await fetch('/ai-helper', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode, question })
+        });
 
-    const data = await res.json();
-    const aiReply = data.response || "Sorry, I didn't get that.";
-
-    conversation.push({ role: "assistant", content: aiReply });
-    addMessage(aiReply, "ai");
-  } catch (error) {
-    // This catch block on the client side will only catch network errors,
-    // not HTTP errors like 400.
-    // We still need the server-side Pipedream logs to see the actual 400 error message.
-    addMessage("⚠️ Error connecting to AI service. Check console for details.", "ai");
-    console.error("Fetch error from GitHub Pages:", error);
-  }
-}
-</script>
+        const data = await res.json();
+        addMessage(`AI: ${data.reply}`, 'ai');
+      } catch (err) {
+        addMessage('AI: Sorry, something went wrong.', 'ai');
+      }
+    }
+  </script>
+</body>
+</html>
